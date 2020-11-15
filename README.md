@@ -1,2 +1,1 @@
-# ardo
-My Arduino Projects
+# My Arduino Projects
