@@ -1,5 +1,5 @@
 int led = 2; //pin number of led
-int laser=3;//pin number of laser
+int laser = 3;//pin number of laser
 bool pulse = false; //led pulsing state
 int pulseRate = 200; //rate between LED pulses (ms)
 
@@ -7,7 +7,7 @@ void setup(){
   pinMode(led, OUTPUT); //digital pin 2 as output
   pinMode(laser, OUTPUT); //digital pin 3 as output
   digitalWrite(led, HIGH); //LED on at init
-  Serial.begin(115200);
+  Serial.begin(9600);
 }
 
 void loop(){
@@ -20,13 +20,13 @@ void loop(){
   if(Serial.available() > 0){
     pulse = false;
     String msg = Serial.readString();
-    if(msg == "led"){ //toggle LEDs
+    if(msg == "leds"){ //toggle LEDs
       int state =  !digitalRead(led);
       msg = state? "LEDs are on" : "LEDs are off";
       digitalWrite(led, state);
     }
-    else if(msg == "las"){ //toggle laser
-      int state =  !digitalRead(led);
+    else if(msg == "laser"){ //toggle laser
+      int state =  !digitalRead(laser);
       msg = state? "Laser is on" : "Laser is off";
       digitalWrite(laser, state);
     }
