@@ -18,9 +18,9 @@ void loop(){
     delay(pulseRate);
   }
   if(Serial.available() > 0){
-    pulse = false;
     String msg = Serial.readString();
     if(msg == "leds"){ //toggle LEDs
+      pulse = false;
       int state =  !digitalRead(led);
       msg = state? "LEDs are on" : "LEDs are off";
       digitalWrite(led, state);
