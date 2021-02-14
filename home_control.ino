@@ -7,7 +7,7 @@ void setup(){
   pinMode(led, OUTPUT); //digital pin 2 as output
   pinMode(laser, OUTPUT); //digital pin 3 as output
   digitalWrite(led, HIGH); //LED on at init
-  Serial.begin(9600);
+  Serial.begin(115200);
 }
 
 void loop(){
