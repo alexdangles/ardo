@@ -32,26 +32,22 @@ void loop(){
       Serial.println(msg);
       digitalWrite(led, state);
       }
-
       else if(msg == "laser"){ //toggle laser
         int state =  !digitalRead(laser);
         msg = state? "Laser is on" : "Laser is off";
         Serial.println(msg);
         digitalWrite(laser, state);
       }
-
       else if(msg == "pulse"){ //pulse LEDs
         pulse = true;
         Serial.println("LEDs are pulsing");
       }
-
       else{
         Serial.println("not a valid command");
       }
-
     }
     msg = "";
-    delay(100);
+    delay(500);
 }
 
 void serialEvent(){//receives msg from user input
